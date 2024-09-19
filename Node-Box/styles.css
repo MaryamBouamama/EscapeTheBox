@@ -1,0 +1,804 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jersey 25 Charted', bold;
+}
+
+.jersey-25-charted-regular {
+    font-family: "Jersey 25 Charted", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .stardos-stencil-regular {
+    font-family: "Stardos Stencil", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .stardos-stencil-bold {
+    font-family: "Stardos Stencil", system-ui;
+    font-weight: 2000;
+    font-style: normal;
+  }
+  
+
+.navbar {
+    background: #120120;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo{
+    background-image: linear-gradient(to top, #71cd76 0%, #175db8 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+#navbar__logo:hover{
+    background-image: linear-gradient(to top, #91188f 0%, #912418 100%);
+
+}
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item{
+    height: 80px;
+}
+.navbar__links{
+    color: #eceff5;
+    display: flex;
+    align-items: center;
+    justify-content: ceter;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%
+}
+
+.navbar__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to top, #301c68 20%, #120120 100%); /* Change this to any color you like */
+}
+
+/*.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #b7417a;
+    color: #ffffff;
+}
+    
+
+.button:hover{
+    background: #912418;
+    transition: all 0.3s ease;
+}
+    */
+
+.navbar__links:hover{
+    color: #912418;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        /*top: -1000px;
+        opacity: 0; */
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: #24204e;
+    }
+
+    .navbar__menu.active{
+        background: #24204e;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo{
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+    }
+
+    .navbar__item{
+        width: 100%;
+    }
+
+    .navbar__links{
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+    }
+
+    #mobile-menu{
+        position: absolue;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__btn{
+        padding-bottom: 2rem;
+    }
+
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3) { /* Corrected from nth-child(1) to nth-child(3) */
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+
+.cube { 
+    position: relative;
+    width: 200px; /* Width of the cube */
+    height: 200px; /* Height of the cube */
+    top: 40%;
+    left: 50%;
+    margin-left: -100px; /* Adjust this to half of the cube's width to center it */
+    margin-top: -100px; /* Adjust this to half of the cube's height to center it vertically */
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    animation: rotate 5s linear infinite;
+}
+
+.face {
+    position: absolute;
+    width: 200px; /* Match the cube's dimension */
+    height: 200px; /* Match the cube's dimension */
+    background-image: url('images/eyes.png');
+    background-size: cover;
+}
+
+.front { transform: translateZ(100px); }
+.back { transform: rotateY(180deg) translateZ(100px); }
+.left { transform: rotateY(-90deg) translateZ(100px); }
+.right { transform: rotateY(90deg) translateZ(100px); }
+.top { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+
+
+@keyframes rotate {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.cube { 
+    animation: rotate 5s linear infinite;
+}
+
+/*bouncing pupils
+face front*/
+.pupil1 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 40%; /* Adjust this value to position the pupil within the eye */
+    left: 30%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil1-anim 2s infinite;
+}
+
+@keyframes pupil1-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, -10px) rotate(5deg); }
+    50% { transform: translate(0, 10px) rotate(0deg); }
+    75% { transform: translate(-10px, 5px) rotate(-5deg); }
+}
+
+.pupil2 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 75%; /* Adjust this value to position the pupil within the eye */
+    left: 40%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-30%, -50%); /* Center the pupil */
+    animation: pupil2-anim 1s infinite;
+}
+
+
+@keyframes pupil2-anim {
+    0%, 100% { transform: translate(0, 0px) rotate(0deg); }
+    25% { transform: translate(10px, 8px) rotate(5deg); }
+    50% { transform: translate(-10px, 5px) rotate(0deg); }
+    75% { transform: translate(-5px, 0px) rotate(-5deg); }
+}
+
+.pupil3 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 10%; /* Adjust this value to position the pupil within the eye */
+    left: 20%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil3-anim 0.8s infinite;
+}
+
+
+@keyframes pupil3-anim {
+  10% { transform:     translate(6px, -10px) rotate(-2deg); }
+  30% { transform:     translate(0px, 2px) rotate(0deg); }
+  40% { transform:     translate(1px, -10px) rotate(1deg); }
+  60% { transform:     translate(-8px, 1px) rotate(0deg); }
+  90% { transform:     translate(10px, 2px) rotate(0deg); }
+  100%{ transform:     translate(1px, -10px) rotate(-1deg); }
+}
+
+.pupil4 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 24%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil4-anim 2.5s infinite;
+}
+
+@keyframes pupil4-anim {
+    0% { transform: translateX(-10px) }
+    25%{transform: translateY(-5px);}
+    50%{transform: translateX(-24px);}
+    75%{transform: translateY(-5px);}
+    100%{transform: translateX(-10px);}
+ 
+}
+
+
+.pupil5 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 74%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil5-anim 1s infinite;
+}
+
+
+@keyframes pupil5-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(1px, -2px) rotate(5deg); }
+    50% { transform: translate(-8px, 5px) rotate(0deg); }
+    75% { transform: translate(-7px, 2px) rotate(-5deg); }
+}
+
+/*face left*/
+
+.pupil6 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 40%; /* Adjust this value to position the pupil within the eye */
+    left: 30%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil6-anim 1s infinite;
+}
+
+@keyframes pupil6-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, -10px) rotate(5deg); }
+    50% { transform: translate(0, 10px) rotate(0deg); }
+    75% { transform: translate(-10px, 5px) rotate(-5deg); }
+}
+
+.pupil7 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 75%; /* Adjust this value to position the pupil within the eye */
+    left: 40%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-30%, -50%); /* Center the pupil */
+    animation: pupil7-anim 2.5s infinite;
+}
+
+
+@keyframes pupil7-anim {
+    0%, 100% { transform: translate(0, 0px) rotate(0deg); }
+    25% { transform: translate(10px, 8px) rotate(5deg); }
+    50% { transform: translate(-10px, 5px) rotate(0deg); }
+    75% { transform: translate(-5px, 0px) rotate(-5deg); }
+}
+
+.pupil8 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 10%; /* Adjust this value to position the pupil within the eye */
+    left: 20%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil8-anim 2s infinite;
+}
+
+
+@keyframes pupil8-anim {
+  10% { transform:     translate(6px, -10px) rotate(-2deg); }
+  30% { transform:     translate(0px, 2px) rotate(0deg); }
+  40% { transform:     translate(1px, -10px) rotate(1deg); }
+  60% { transform:     translate(-8px, 1px) rotate(0deg); }
+  90% { transform:     translate(10px, 2px) rotate(0deg); }
+  100%{ transform:     translate(1px, -10px) rotate(-1deg); }
+}
+
+.pupil9 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 24%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil9-anim 0.8s infinite;
+}
+
+@keyframes pupil9-anim {
+    0% { transform: translateX(-10px) }
+    25%{transform: translateY(-5px);}
+    50%{transform: translateX(-24px);}
+    75%{transform: translateY(-5px);}
+    100%{transform: translateX(-10px);}
+ 
+}
+
+
+.pupil10 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 74%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil10-anim 1s infinite;
+}
+
+
+@keyframes pupil10-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(1px, -2px) rotate(5deg); }
+    50% { transform: translate(-8px, 5px) rotate(0deg); }
+    75% { transform: translate(-7px, 2px) rotate(-5deg); }
+}
+
+
+/*face right*/
+
+.pupil11 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 40%; /* Adjust this value to position the pupil within the eye */
+    left: 30%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil11-anim 2.5s infinite;
+}
+
+@keyframes pupil11-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, -10px) rotate(5deg); }
+    50% { transform: translate(0, 10px) rotate(0deg); }
+    75% { transform: translate(-10px, 5px) rotate(-5deg); }
+}
+
+.pupil12 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 75%; /* Adjust this value to position the pupil within the eye */
+    left: 40%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-30%, -50%); /* Center the pupil */
+    animation: pupil12-anim 2s infinite;
+}
+
+
+@keyframes pupil12-anim {
+    0%, 100% { transform: translate(0, 0px) rotate(0deg); }
+    25% { transform: translate(10px, 8px) rotate(5deg); }
+    50% { transform: translate(-10px, 5px) rotate(0deg); }
+    75% { transform: translate(-5px, 0px) rotate(-5deg); }
+}
+
+.pupil13 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 10%; /* Adjust this value to position the pupil within the eye */
+    left: 20%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil13-anim 0.8s infinite;
+}
+
+
+@keyframes pupil13-anim {
+  10% { transform:     translate(6px, -10px) rotate(-2deg); }
+  30% { transform:     translate(0px, 2px) rotate(0deg); }
+  40% { transform:     translate(1px, -10px) rotate(1deg); }
+  60% { transform:     translate(-8px, 1px) rotate(0deg); }
+  90% { transform:     translate(10px, 2px) rotate(0deg); }
+  100%{ transform:     translate(1px, -10px) rotate(-1deg); }
+}
+
+.pupil14 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 24%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil14-anim 2.5s infinite;
+}
+
+@keyframes pupil14-anim {
+    0% { transform: translateX(-10px) }
+    25%{transform: translateY(-5px);}
+    50%{transform: translateX(-24px);}
+    75%{transform: translateY(-5px);}
+    100%{transform: translateX(-10px);}
+ 
+}
+
+
+.pupil15 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 74%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil15-anim 0.8s infinite;
+}
+
+
+@keyframes pupil15-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(1px, -2px) rotate(5deg); }
+    50% { transform: translate(-8px, 5px) rotate(0deg); }
+    75% { transform: translate(-7px, 2px) rotate(-5deg); }
+}
+
+/*face top*/
+
+.pupil16 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 40%; /* Adjust this value to position the pupil within the eye */
+    left: 30%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil16-anim 1s infinite;
+}
+
+@keyframes pupil16-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, -10px) rotate(5deg); }
+    50% { transform: translate(0, 10px) rotate(0deg); }
+    75% { transform: translate(-10px, 5px) rotate(-5deg); }
+}
+
+.pupil17 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 75%; /* Adjust this value to position the pupil within the eye */
+    left: 40%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-30%, -50%); /* Center the pupil */
+    animation: pupil17-anim 2s infinite;
+}
+
+
+@keyframes pupil17-anim {
+    0%, 100% { transform: translate(0, 0px) rotate(0deg); }
+    25% { transform: translate(10px, 8px) rotate(5deg); }
+    50% { transform: translate(-10px, 5px) rotate(0deg); }
+    75% { transform: translate(-5px, 0px) rotate(-5deg); }
+}
+
+.pupil18 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 10%; /* Adjust this value to position the pupil within the eye */
+    left: 20%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil18-anim 2.5s infinite;
+}
+
+
+@keyframes pupil18-anim {
+  10% { transform:     translate(6px, -10px) rotate(-2deg); }
+  30% { transform:     translate(0px, 2px) rotate(0deg); }
+  40% { transform:     translate(1px, -10px) rotate(1deg); }
+  60% { transform:     translate(-8px, 1px) rotate(0deg); }
+  90% { transform:     translate(10px, 2px) rotate(0deg); }
+  100%{ transform:     translate(1px, -10px) rotate(-1deg); }
+}
+
+.pupil19 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 24%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil19-anim 2s infinite;
+}
+
+@keyframes pupil19-anim {
+    0% { transform: translateX(-10px) }
+    25%{transform: translateY(-5px);}
+    50%{transform: translateX(-24px);}
+    75%{transform: translateY(-5px);}
+    100%{transform: translateX(-10px);}
+ 
+}
+
+
+.pupil20 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 74%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil20-anim 1s infinite;
+}
+
+
+@keyframes pupil20-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(1px, -2px) rotate(5deg); }
+    50% { transform: translate(-8px, 5px) rotate(0deg); }
+    75% { transform: translate(-7px, 2px) rotate(-5deg); }
+}
+
+/*face bottom*/
+
+.pupil21 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 40%; /* Adjust this value to position the pupil within the eye */
+    left: 30%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil21-anim 0.8s infinite;
+}
+
+@keyframes pupil21-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, -10px) rotate(5deg); }
+    50% { transform: translate(0, 10px) rotate(0deg); }
+    75% { transform: translate(-10px, 5px) rotate(-5deg); }
+}
+
+.pupil22 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 75%; /* Adjust this value to position the pupil within the eye */
+    left: 40%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-30%, -50%); /* Center the pupil */
+    animation: pupil22-anim 2s infinite;
+}
+
+
+@keyframes pupil22-anim {
+    0%, 100% { transform: translate(0, 0px) rotate(0deg); }
+    25% { transform: translate(10px, 8px) rotate(5deg); }
+    50% { transform: translate(-10px, 5px) rotate(0deg); }
+    75% { transform: translate(-5px, 0px) rotate(-5deg); }
+}
+
+.pupil23 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 10%; /* Adjust this value to position the pupil within the eye */
+    left: 20%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil23-anim 1s infinite;
+}
+
+
+@keyframes pupil23-anim {
+  10% { transform:     translate(6px, -10px) rotate(-2deg); }
+  30% { transform:     translate(0px, 2px) rotate(0deg); }
+  40% { transform:     translate(1px, -10px) rotate(1deg); }
+  60% { transform:     translate(-8px, 1px) rotate(0deg); }
+  90% { transform:     translate(10px, 2px) rotate(0deg); }
+  100%{ transform:     translate(1px, -10px) rotate(-1deg); }
+}
+
+.pupil24 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 24%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil24-anim 0.8s infinite;
+}
+
+@keyframes pupil24-anim {
+    0% { transform: translateX(-10px) }
+    25%{transform: translateY(-5px);}
+    50%{transform: translateX(-24px);}
+    75%{transform: translateY(-5px);}
+    100%{transform: translateX(-10px);}
+ 
+}
+
+
+.pupil25 {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(46, 165, 208);
+    border-radius: 70px;
+    position: absolute;
+    top: 74%; /* Adjust this value to position the pupil within the eye */
+    left: 82%; /* Adjust this value to position the pupil within the eye */
+    transform: translate(-50%, -50%); /* Center the pupil */
+    animation: pupil25-anim 2s infinite;
+}
+
+
+@keyframes pupil25-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(1px, -2px) rotate(5deg); }
+    50% { transform: translate(-8px, 5px) rotate(0deg); }
+    75% { transform: translate(-7px, 2px) rotate(-5deg); }
+}
+
+/*fog anim*/
+#myCanvas
+{
+  height:500px;
+  width:20000px;
+  position:absolute;
+  bottom: -30px;
+}
+
+
+
+
+
+
+

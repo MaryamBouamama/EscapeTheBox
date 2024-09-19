@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPE-THE-BOX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet"></head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+           
+            <a href="/" id="navbar__logo">ESCAPE-THE-BOX</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Shibuya</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/memories.html" class="navbar__links">Memories</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Eyes</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">BEGIN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--cube section-->
+    <div class="cube"> 
+        <div class="face front">
+            <div class="pupil1"></div>
+            <div class="pupil2"></div>
+            <div class="pupil3"></div>
+            <div class="pupil4"></div>
+            <div class="pupil5"></div>
+        </div>
+        <div class="face back">
+        </div>
+        <div class="face left">
+            <div class="pupil6"></div>
+            <div class="pupil7"></div>
+            <div class="pupil8"></div>
+            <div class="pupil9"></div>
+            <div class="pupil10"></div>
+        </div>
+        <div class="face right">
+            <div class="pupil11"></div>
+            <div class="pupil12"></div>
+            <div class="pupil13"></div>
+            <div class="pupil14"></div>
+            <div class="pupil15"></div>
+        </div>
+        <div class="face top">
+             <div class="pupil16"></div>
+            <div class="pupil17"></div>
+            <div class="pupil18"></div>
+            <div class="pupil19"></div>
+            <div class="pupil20"></div>
+        </div>
+        <div class="face bottom">
+         <div class="pupil21"></div>
+            <div class="pupil22"></div>
+            <div class="pupil23"></div>
+            <div class="pupil24"></div>
+            <div class="pupil25"></div>
+        </div>
+    </div>
+
+    <!--fog section-->
+    <canvas id="myCanvas" height="200" width="10000gr"></canvas>
+    <script src="app.js"></script>
+</body>
+</html>
